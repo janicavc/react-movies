@@ -7,9 +7,9 @@ export default function NavBar({user}) {
         <>
             <h3>Welcome {user}!</h3>
             <nav>
-                <Link to="/">Movies List</Link>
+                <Link to="/" className='btn btn-outline-info'>Movies List</Link>
                 &nbsp; | &nbsp;
-                <Link to="/actors">Actor List</Link>
+                <Link to="/actors" className='btn btn-outline-info'>Actor List</Link>
             </nav>
             <br></br>
         </>

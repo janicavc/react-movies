@@ -20,11 +20,11 @@ export default function SignUpForm({ handleSignUp }) {
             <h3>Enter a Username to Sign Up</h3>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Username</label>
+                    <label>Username: </label>
                     <input type="text" name="name" value={formData.name} onChange={handleChange}></input>
                 </div>
                 <br></br>
-                <button type="submit">Log In</button>
+                <button type="submit" className='btn btn-outline-success'>Log In</button>
             </form>
         </>
     )

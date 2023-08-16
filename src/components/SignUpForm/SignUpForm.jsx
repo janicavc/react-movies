@@ -1,13 +1,13 @@
 import {useState} from 'react';
 
-export default function SignUpForm({ signUp }) {
+export default function SignUpForm({ handleSignUp }) {
     const [formData, setFormData] = useState({
         name: ""
     });
 
-    function handleUser(evt) {
+    function handleSubmit(evt) {
         evt.preventDefault();
-        signUp(formData.name)
+        handleSignUp(formData.name);
     }
 
     function handleChange(evt) {
@@ -18,7 +18,7 @@ export default function SignUpForm({ signUp }) {
     return(
         <>
             <h3>Enter a Username to Sign Up</h3>
-            <form onSubmit={handleUser}>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label>Username</label>
                     <input type="text" name="name" value={formData.name} onChange={handleChange}></input>

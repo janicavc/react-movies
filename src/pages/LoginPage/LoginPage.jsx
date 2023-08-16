@@ -1,10 +1,10 @@
 import React from 'react'
 import SignUpForm from '../../components/SignUpForm/SignUpForm'
 
-export default function LoginPage() {
+export default function LoginPage({ handleSignUp }) {
   return (
     <>
-      <SignUpForm signUp={signUp} />
+      <SignUpForm handleSignUp={handleSignUp} />
     </>
   )
 }

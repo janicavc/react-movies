@@ -11,19 +11,24 @@ import NavBar from '../../components/NavBar/NavBar.jsx';
 export default function App() {
   const [user, setUser] = useState(null);
 
+  function handleSignUp(name){
+    setUser(name)
+  }
+
   return (
     <main className="App">
+      <h1>React Movies</h1>
       { user ?
         <>
           <NavBar user={user} />
           <Routes>
-            <Route path='/' element={<MoviesListPage />}></Route>
-            <Route path='/movies/:movieName' element={<MovieDetailPage />}></Route>
-            <Route path='/actors' element={<ActorListPage />}></Route>
+            <Route path='/' element={<MoviesListPage movies={movies} />} />
+            <Route path='/movies/:movieName' element={<MovieDetailPage movies={movies} />} />
+            <Route path='/actors' element={<ActorListPage movies={movies} />} />
           </Routes>
         </>
         :
-        <LoginPage signup={signup} />
+        <LoginPage handleSignUp={handleSignUp} />
       }
     </main>
   );

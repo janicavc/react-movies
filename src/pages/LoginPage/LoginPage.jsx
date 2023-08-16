@@ -1,7 +1,10 @@
 import React from 'react'
+import SignUpForm from '../../components/SignUpForm/SignUpForm'
 
 export default function LoginPage() {
   return (
-    <h1>LoginPage</h1>
+    <>
+      <SignUpForm signUp={signUp} />
+    </>
   )
 }

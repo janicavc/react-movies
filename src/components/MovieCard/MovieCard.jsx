@@ -1,22 +1,20 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
+
 
 export default function MovieCard({ movie, index }) {
-    const imageURL = movie.posterPath;
-    const cardStyle = {
-        backgroundImage: `url(${imageURL})`
-    }
+  const imageURL = movie.posterPath;
 
-    return (
-        <>
-            <Link to={`/movies/${movie.title}`}>
-                <div className='MovieCard' style={cardStyle}>
-                    <div className='MovieCardContent'>
-                        <p>{movie.title}</p>
-                        <p>{movie.releaseDate}</p>
-                    </div>
-                </div>
-            </Link>
-        </>
-    )
+  return (
+    <Link to={`/movies/${movie.title}`} className='text-decoration-none'>
+      <Card>
+        <Card.Img variant='top' src={imageURL} alt={movie.title} />
+        <Card.Body>
+          <Card.Title>{movie.title}</Card.Title>
+          <Card.Text>{movie.releaseDate}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Link>
+  );
 }
